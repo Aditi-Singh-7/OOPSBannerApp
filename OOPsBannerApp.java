@@ -1,33 +1,31 @@
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class OOPsBannerApp {
 
     public static void main(String[] args) {
 
-        String[] oPattern = getOPattern();
-        String[] pPattern = getPPattern();
-        String[] sPattern = getSPattern();
+        // Build character pattern map
+        Map<Character, String[]> patternMap = buildCharacterPatternMap();
 
-        // Combine patterns line by line
-        String[] bannerLines = new String[7];
+        // Message to render
+        String message = "OOPS";
 
-        for (int i = 0; i < 7; i++) {
-            bannerLines[i] = String.join(" ",
-                    oPattern[i],
-                    oPattern[i],
-                    pPattern[i],
-                    sPattern[i]
-            );
-        }
-
-        // Print banner
-        for (String line : bannerLines) {
-            System.out.println(line);
-        }
+        // Display banner
+        displayBanner(message, patternMap);
     }
 
-    // Helper method for letter O
-    private static String[] getOPattern() {
-        return new String[]{
+    /**
+     * Utility method to build character pattern map
+     *
+     * @return Map of character to ASCII pattern
+     */
+    private static Map<Character, String[]> buildCharacterPatternMap() {
+
+        Map<Character, String[]> map = new HashMap<>();
+
+        map.put('O', new String[]{
             " *** ",
             "*     *",
             "*     *",
@@ -35,12 +33,9 @@ public class OOPsBannerApp {
             "*     *",
             "*     *",
             " *** "
-        };
-    }
+        });
 
-    // Helper method for letter P
-    private static String[] getPPattern() {
-        return new String[]{
+        map.put('P', new String[]{
             " *** ",
             "*     *",
             "*     *",
@@ -48,12 +43,9 @@ public class OOPsBannerApp {
             "*      ",
             "*      ",
             "*      "
-        };
-    }
+        });
 
-    // Helper method for letter S
-    private static String[] getSPattern() {
-        return new String[]{
+        map.put('S', new String[]{
             " *** ",
             "*      ",
             "*      ",
@@ -61,6 +53,31 @@ public class OOPsBannerApp {
             "      *",
             "      *",
             " *** "
-        };
+        });
+
+        return map;
+    }
+
+    /**
+     * Utility method to display banner message
+     *
+     * @param message Word to render
+     * @param patternMap Map containing character patterns
+     */
+    private static void displayBanner(String message, Map<Character, String[]> patternMap) {
+
+        // Banner has 7 rows
+        for (int row = 0; row < 7; row++) {
+
+            StringBuilder lineBuilder = new StringBuilder();
+
+            // Loop through each character in the message
+            for (char ch : message.toCharArray()) {
+                String[] pattern = patternMap.get(ch);
+                lineBuilder.append(pattern[row]).append(" ");
+            }
+
+            System.out.println(lineBuilder.toString());
+        }
     }
 }
