@@ -3,25 +3,27 @@ public class OOPsBannerApp {
 
     public static void main(String[] args) {
 
-        System.out.println(String.join(" ",
-                " ** ", "  ** ", "  ** ", "  ** "));
+        // Create String array to store banner lines
+        String[] bannerLines = {
+            String.join(" ",
+            " ** ", "  ** ", "  ** ", "  ** "),
+            String.join(" ",
+            "*     *", " *     *", " *     *", " *      "),
+            String.join(" ",
+            "*     *", " *     *", " *     *", " *      "),
+            String.join(" ",
+            "*     ", " *     *", " **  ", "  *** "),
+            String.join(" ",
+            "*     *", " *     *", " *      ", "       *"),
+            String.join(" ",
+            "*     *", " *     *", " *      ", "       *"),
+            String.join(" ",
+            " ** ", "  ** ", " *      ", "  *** ")
+        };
 
-        System.out.println(String.join(" ",
-                "*     *", " *     *", " *     *", " *      "));
-
-        System.out.println(String.join(" ",
-                "*     *", " *     *", " *     *", " *      "));
-
-        System.out.println(String.join(" ",
-                "*     ", " *     *", " **  ", "  *** "));
-
-        System.out.println(String.join(" ",
-                "*     *", " *     *", " *      ", "       *"));
-
-        System.out.println(String.join(" ",
-                "*     *", " *     *", " *      ", "       *"));
-
-        System.out.println(String.join(" ",
-                " ** ", "  ** ", " *      ", "  *** "));
+        // Print banner using enhanced for loop
+        for (String line : bannerLines) {
+            System.out.println(line);
+        }
     }
 }
