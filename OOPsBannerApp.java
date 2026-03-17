@@ -3,22 +3,15 @@ public class OOPsBannerApp {
 
     public static void main(String[] args) {
 
-        // Create String array to store banner lines
+        // Inline declaration and initialization of banner lines
         String[] bannerLines = {
-            String.join(" ",
-            " ** ", "  ** ", "  ** ", "  ** "),
-            String.join(" ",
-            "*     *", " *     *", " *     *", " *      "),
-            String.join(" ",
-            "*     *", " *     *", " *     *", " *      "),
-            String.join(" ",
-            "*     ", " *     *", " **  ", "  *** "),
-            String.join(" ",
-            "*     *", " *     *", " *      ", "       *"),
-            String.join(" ",
-            "*     *", " *     *", " *      ", "       *"),
-            String.join(" ",
-            " ** ", "  ** ", " *      ", "  *** ")
+            String.join(" ", " ** ", "  ** ", "  ** ", "  ** "),
+            String.join(" ", "*     *", " *     *", " *     *", " *      "),
+            String.join(" ", "*     *", " *     *", " *     *", " *      "),
+            String.join(" ", "*     ", " *     *", " **  ", "  *** "),
+            String.join(" ", "*     *", " *     *", " *      ", "       *"),
+            String.join(" ", "*     *", " *     *", " *      ", "       *"),
+            String.join(" ", " ** ", "  ** ", " *      ", "  *** ")
         };
 
         // Print banner using enhanced for loop
